@@ -1,0 +1,69 @@
+composer下载
+https://getcomposer.org
+http://www.phpcomposer.com
+
+win,mac下安装图文教程
+http://bbs.houdunwang.com/thread-100920-1-1.html
+
+安装laravel
+laravel
+composer create-project laravel/laravel --prefer-dist
+blog
+composer create-project laravel/laravel blog --prefer-dist
+
+配置：
+apache-conf  打开
+LoadModule rewrite_module modules/mod_rewrite.so
+LoadModule vhost_alias_module modules/mod_vhost_alias.so
+Include conf/extra/httpd-vhosts.conf
+
+E:\Branton\phptool\Apache24\conf\extra   httpd-vhosts.conf 
+<VirtualHost *:80>
+    ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "E:/Branton/php-laravel/laravel/"
+    ServerName laraveldemo.branton
+    ErrorLog "logs/dummy-host2.example.com-error.log"
+    CustomLog "logs/dummy-host2.example.com-access.log" common
+</VirtualHost>
+
+C:\Windows\System32\drivers\etc
+127.0.0.1 laraveldemo.branton
+
+创建控制器
+php artisan make:controller UserController
+php artisan make:middleware AdminLogin
+查看路由
+php artisan  route:list
+
+语法：
+@if($num < 60)
+不及格
+@else
+及格
+@endif
+
+@unless($num > 60)
+不及格
+@endunless
+
+@for($i=0;$i<=$num;$i++)
+{{$i}}<br/>
+@endfor
+
+@foreach($arrays as $v)
+{{ $v }}
+@endforeach
+
+@foreach($arrays as $k=>$v)
+   @if($k > 1)
+      {{ $k }} => {{ $v }}<br/>
+   @else
+       {{ $v }}<br/>
+   @endif
+@endforeach
+
+@forelse($arrays1 as $v)
+{{ $v }}
+@empty
+没有数据
+@endforelse
